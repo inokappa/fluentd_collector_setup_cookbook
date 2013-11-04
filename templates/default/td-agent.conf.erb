@@ -1,0 +1,14 @@
+# Input
+<source>
+  type forward
+  port 24224
+</source>
+
+# Output
+<match nginx.**>
+  type mongo
+  database nginx
+  collection accesslog
+  #
+  buffer_chunk_limit 128m
+</match>

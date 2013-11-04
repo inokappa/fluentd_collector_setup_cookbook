@@ -1,0 +1,20 @@
+# com2sec
+com2sec mynetwork xxx.xxx.xxx.0/24 example
+com2sec local 127.0.0.1 example
+
+# group
+group mynetworks v1 mynetwork
+group mynetworks v2c mynetwork
+group mynetworks v1 local
+group mynetworks v2c local
+
+# view
+view    all    included   .1   80
+
+# acccess
+access mynetworks "" any noauth exact all all none
+
+#
+syslocation Unknown (edit /etc/snmp/snmpd.conf)
+syscontact Root <root@localhost> (configure /etc/snmp/snmp.local.conf)
+dontLogTCPWrappersConnects yes
